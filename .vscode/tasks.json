@@ -1,10 +1,10 @@
 {
-  // For more information, visit: https://go.microsoft.com/fwlink/?LinkId=733558
   "version": "2.0.0",
   "tasks": [
     {
-      "type": "npm",
-      "script": "start",
+      "label": "serve",
+      "type": "shell",
+      "command": "ng serve",
       "isBackground": true,
       "problemMatcher": {
         "owner": "typescript",
@@ -12,17 +12,18 @@
         "background": {
           "activeOnStart": true,
           "beginsPattern": {
-            "regexp": "(.*?)"
+            "regexp": "Building..."
           },
           "endsPattern": {
-            "regexp": "bundle generation complete"
+            "regexp": "Application bundle generation complete"
           }
         }
       }
     },
     {
-      "type": "npm",
-      "script": "test",
+      "label": "serve (prod)",
+      "type": "shell",
+      "command": "ng serve -c production",
       "isBackground": true,
       "problemMatcher": {
         "owner": "typescript",
@@ -30,10 +31,56 @@
         "background": {
           "activeOnStart": true,
           "beginsPattern": {
-            "regexp": "(.*?)"
+            "regexp": "Building..."
           },
           "endsPattern": {
-            "regexp": "bundle generation complete"
+            "regexp": "Application bundle generation complete"
+          }
+        }
+      }
+    },
+    {
+      "label": "test (all specs)",
+      "type": "shell",
+      "command": "ng test",
+      "isBackground": true,
+      "group": {
+        "kind": "test",
+        "isDefault": false
+      },
+      "problemMatcher": {
+        "owner": "typescript",
+        "pattern": "$tsc",
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": {
+            "regexp": "Generating browser application bundles"
+          },
+          "endsPattern": {
+            "regexp": "Browser application bundle generation complete"
+          }
+        }
+      }
+    },
+    {
+      "label": "test (current spec)",
+      "type": "shell",
+      "command": "ng test --include ${relativeFile}",
+      "isBackground": true,
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      },
+      "problemMatcher": {
+        "owner": "typescript",
+        "pattern": "$tsc",
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": {
+            "regexp": "Generating browser application bundles"
+          },
+          "endsPattern": {
+            "regexp": "Browser application bundle generation complete"
           }
         }
       }
