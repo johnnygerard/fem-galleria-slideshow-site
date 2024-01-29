@@ -1,4 +1,4 @@
-import { Painting } from "../types/painting";
+import type { Painting } from "../types/painting";
 
 export const paintings: Painting[] = [
   {
