@@ -1,20 +1,27 @@
 {
-  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "ng serve",
+      "name": "Load Angular App in Chrome",
       "type": "chrome",
       "request": "launch",
-      "preLaunchTask": "npm: start",
-      "url": "http://localhost:4200/"
+      "preLaunchTask": "serve",
+      "url": "http://localhost:4200/",
+      "runtimeArgs": [
+        "--auto-open-devtools-for-tabs",
+        "--user-data-dir=${userHome}/.config/vscode-chrome-dev"
+      ]
     },
     {
-      "name": "ng test",
+      "name": "Load Angular App in Chrome (prod)",
       "type": "chrome",
       "request": "launch",
-      "preLaunchTask": "npm: test",
-      "url": "http://localhost:9876/debug.html"
+      "preLaunchTask": "serve (prod)",
+      "url": "http://localhost:4200/",
+      "runtimeArgs": [
+        "--auto-open-devtools-for-tabs",
+        "--user-data-dir=${userHome}/.config/vscode-chrome-dev"
+      ]
     }
   ]
 }
