@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Routes } from '@angular/router';
+import { HomeComponent } from './home/home.component';
 
 @Component({
   template: '<p>dummy works!</p>',
@@ -11,7 +12,7 @@ export const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    component: DummyComponent // TODO: HomeComponent
+    component: HomeComponent
   },
   {
     path: 'slideshow/:title',
