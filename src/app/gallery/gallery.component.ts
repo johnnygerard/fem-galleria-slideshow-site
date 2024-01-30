@@ -17,6 +17,7 @@ import { RouterModule } from '@angular/router';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class GalleryComponent implements AfterViewInit {
+  readonly WIDTH = 324;
   masonry?: Masonry;
   paintings = paintings;
 
@@ -30,19 +31,5 @@ export class GalleryComponent implements AfterViewInit {
       gutter: '.gutter-sizer',
       fitWidth: true, // Allows horizontal centering
     });
-  }
-
-  get width(): number {
-    return 324;
-  }
-
-  getHeight(resolution: [number, number]): number {
-    const [width, height] = resolution;
-
-    return Math.round(height / width * this.width);
-  }
-
-  toSlug(title: string): string {
-    return title.toLowerCase().replaceAll(' ', '-');
   }
 }
