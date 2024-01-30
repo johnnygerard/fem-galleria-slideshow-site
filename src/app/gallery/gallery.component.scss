@@ -1,18 +1,24 @@
+@use 'index' as *;
+
 :host {
   display: block;
-  padding: 24px 24px 0;
+  margin: 0 auto;
 }
 
 .masonry-item {
-  margin-bottom: 24px;
   height: auto;
+  margin-bottom: 40px;
 
-  &,
-  .column-sizer {
-    width: calc(100% - 48px);
+  @include mobile {
+    margin-bottom: 24px;
   }
 }
 
+.masonry-item,
+.column-sizer {
+  width: 324px;
+}
+
 .gutter-sizer {
-  width: 0;
+  width: 40px;
 }

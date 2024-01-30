@@ -2,6 +2,7 @@ import { AfterViewInit, ChangeDetectionStrategy, Component, ElementRef } from '@
 import { CommonModule, NgOptimizedImage } from '@angular/common';
 import Masonry from 'masonry-layout';
 import { paintings } from '../paintings';
+import type { Image } from '../../types/image';
 
 @Component({
   selector: 'app-gallery',
@@ -15,28 +16,30 @@ import { paintings } from '../paintings';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class GalleryComponent implements AfterViewInit {
-  images: {
-    name: string;
-    width: number;
-    height: number;
-  }[];
+  masonry?: Masonry;
+  images: Image[] = paintings.map(painting => {
+    const { resolution, title } = painting;
 
-  constructor(private _host: ElementRef) {
-    this.images = paintings.map(painting => {
-      const { resolution, title } = painting;
-      const name = title.toLowerCase().replaceAll(' ', '-') + '.png';
-      const width = resolution[0];
-      const height = resolution[1];
+    return {
+      name: title.toLowerCase().replaceAll(' ', '-') + '.png',
+      width: resolution[0],
+      height: resolution[1],
+    };
+  });
 
-      return { name, width, height };
-    });
-  }
+  constructor(private _host: ElementRef) { }
 
   ngAfterViewInit(): void {
-    new Masonry(this._host.nativeElement, {
+    this.masonry = new Masonry(this._host.nativeElement, {
+      // Masonry options: https://masonry.desandro.com/options
       itemSelector: '.masonry-item',
       columnWidth: '.column-sizer',
       gutter: '.gutter-sizer',
+      fitWidth: true, // Allows horizontal centering
     });
+  }
+
+  computeHeight(image: Image, width: number): number {
+    return Math.round(image.height / image.width * width);
   }
 }

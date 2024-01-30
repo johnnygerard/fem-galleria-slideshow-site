@@ -1,4 +1,4 @@
 <div class="column-sizer"></div>
 <div class="gutter-sizer"></div>
-<img class="masonry-item" *ngFor="let image of images; index as i" [ngSrc]="image.name"
-    [width]="image.width" [height]="image.height" alt sizes="calc(100vw - 48px)" [priority]="i < 2">
+<img class="masonry-item" *ngFor="let image of images; index as i" [ngSrc]="image.name" width="324"
+    [height]="computeHeight(image, 324)" alt [priority]="i < 2" ngSrcset="1x, 2x, 3x">
