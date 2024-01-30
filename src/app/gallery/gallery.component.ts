@@ -2,7 +2,6 @@ import { AfterViewInit, ChangeDetectionStrategy, Component, ElementRef } from '@
 import { CommonModule, NgOptimizedImage } from '@angular/common';
 import Masonry from 'masonry-layout';
 import { paintings } from '../paintings';
-import type { Image } from '../../types/image';
 import { RouterModule } from '@angular/router';
 
 @Component({
@@ -19,17 +18,7 @@ import { RouterModule } from '@angular/router';
 })
 export class GalleryComponent implements AfterViewInit {
   masonry?: Masonry;
-  images: Image[] = paintings.map(painting => {
-    const { resolution, title } = painting;
-    const slug = title.toLowerCase().replaceAll(' ', '-');
-
-    return {
-      link: '/slideshow/' + slug,
-      name: slug + '.png',
-      width: resolution[0],
-      height: resolution[1],
-    };
-  });
+  paintings = paintings;
 
   constructor(private _host: ElementRef) { }
 
@@ -43,7 +32,17 @@ export class GalleryComponent implements AfterViewInit {
     });
   }
 
-  computeHeight(image: Image, width: number): number {
-    return Math.round(image.height / image.width * width);
+  get width(): number {
+    return 324;
+  }
+
+  getHeight(resolution: [number, number]): number {
+    const [width, height] = resolution;
+
+    return Math.round(height / width * this.width);
+  }
+
+  toSlug(title: string): string {
+    return title.toLowerCase().replaceAll(' ', '-');
   }
 }

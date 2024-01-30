@@ -1,7 +1,7 @@
 <div class="column-sizer"></div>
 <div class="gutter-sizer"></div>
-<a [routerLink]="image.link" class="masonry-item"
-    *ngFor="let image of images; index as i">
-  <img [ngSrc]="image.name" width="324" [height]="computeHeight(image, 324)" alt [priority]="i < 2"
-      ngSrcset="1x, 2x, 3x">
+<a class="masonry-item" *ngFor="let painting of paintings; index as i"
+    [routerLink]="['/slideshow', toSlug(painting.title)]">
+  <img [ngSrc]="toSlug(painting.title) + '.png'" ngSrcset="1x, 2x, 3x" [width]="width"
+      [height]="getHeight(painting.resolution)" [priority]="i < 2" alt>
 </a>
