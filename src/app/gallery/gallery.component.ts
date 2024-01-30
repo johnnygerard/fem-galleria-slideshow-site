@@ -3,6 +3,7 @@ import { CommonModule, NgOptimizedImage } from '@angular/common';
 import Masonry from 'masonry-layout';
 import { paintings } from '../paintings';
 import type { Image } from '../../types/image';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-gallery',
@@ -10,6 +11,7 @@ import type { Image } from '../../types/image';
   imports: [
     CommonModule,
     NgOptimizedImage,
+    RouterModule,
   ],
   templateUrl: './gallery.component.html',
   styleUrl: './gallery.component.scss',
@@ -19,9 +21,11 @@ export class GalleryComponent implements AfterViewInit {
   masonry?: Masonry;
   images: Image[] = paintings.map(painting => {
     const { resolution, title } = painting;
+    const slug = title.toLowerCase().replaceAll(' ', '-');
 
     return {
-      name: title.toLowerCase().replaceAll(' ', '-') + '.png',
+      link: '/slideshow/' + slug,
+      name: slug + '.png',
       width: resolution[0],
       height: resolution[1],
     };
