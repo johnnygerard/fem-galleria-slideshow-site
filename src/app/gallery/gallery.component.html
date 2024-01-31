@@ -4,7 +4,7 @@
   <img [ngSrc]="painting.imgName" ngSrcset="1x, 2x, 3x" [width]="WIDTH"
       [height]="painting.computeHeight(WIDTH)" [priority]="i < 2" alt>
   <p class="anchor-text">
-    <span class="title">{{ painting.title }}</span>
+    <span class="title">{{ painting.title | hyphen }}</span>
     <br>
     <span class="artist">{{ painting.artist }}</span>
   </p>

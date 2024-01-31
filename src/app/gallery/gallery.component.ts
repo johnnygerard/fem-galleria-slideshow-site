@@ -3,6 +3,7 @@ import { CommonModule, NgOptimizedImage } from '@angular/common';
 import Masonry from 'masonry-layout';
 import { paintings } from '../paintings';
 import { RouterModule } from '@angular/router';
+import { HyphenPipe } from '../hyphen.pipe';
 
 @Component({
   selector: 'app-gallery',
@@ -11,6 +12,7 @@ import { RouterModule } from '@angular/router';
     CommonModule,
     NgOptimizedImage,
     RouterModule,
+    HyphenPipe,
   ],
   templateUrl: './gallery.component.html',
   styleUrl: './gallery.component.scss',
