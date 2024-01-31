@@ -2,12 +2,13 @@ import { ImageLoaderConfig } from "@angular/common";
 
 export const customImageKitLoader = (config: ImageLoaderConfig) => {
   const params: TransformParams = config.loaderParams ? config.loaderParams : {};
+  let queryString;
 
-  if (config.width)
+  if (config.width) {
     params['w'] = config.width.toString();
-
-  const transformation = serialize(params);
-  const queryString = transformation ? `?tr=${transformation}` : '';
+    queryString = `?tr=${serialize(params)}`;
+  }
+  else queryString = '';
 
   return `${IMAGEKIT_ENDPOINT}/${config.src}${queryString}`;
 };
