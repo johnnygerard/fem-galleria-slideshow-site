@@ -1,4 +1,6 @@
 export class Painting {
+  previous?: Painting;
+  next?: Painting;
   imgName: string;
   link: string;
   slug: string;

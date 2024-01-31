@@ -2,6 +2,8 @@ import { Painting } from "../types/painting.class";
 
 export const paintings = new Map<string, Painting>();
 
+let previous: Painting | null = null;
+
 [
   new Painting(
     "Vincent Van Gogh",
@@ -123,6 +125,12 @@ export const paintings = new Map<string, Painting>();
     "The_Swing_(Fragonard)",
     1767
   ),
-].forEach(
-  painting => paintings.set(painting.slug, painting)
-);
+].forEach(painting => {
+  if (previous) {
+    previous.next = painting;
+    painting.previous = previous;
+  }
+
+  paintings.set(painting.slug, painting);
+  previous = painting;
+});
