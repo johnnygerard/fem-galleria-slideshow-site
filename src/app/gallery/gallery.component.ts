@@ -21,7 +21,7 @@ import { HyphenPipe } from '../hyphen.pipe';
 export class GalleryComponent implements AfterViewInit {
   readonly WIDTH = 324;
   masonry?: Masonry;
-  paintings = paintings;
+  paintings = paintings.values();
 
   constructor(private _host: ElementRef) { }
 
