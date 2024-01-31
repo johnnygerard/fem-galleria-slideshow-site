@@ -1,6 +1,7 @@
 export class Painting {
   imgName: string;
   link: string;
+  slug: string;
   wikiSource: string;
 
   constructor(
@@ -11,10 +12,9 @@ export class Painting {
     public wikipedia: string,
     public year: number,
   ) {
-    const slug = title.toLowerCase().replaceAll(' ', '-');
-
-    this.imgName = slug + '.png';
-    this.link = '/slideshow/' + slug;
+    this.slug = title.toLowerCase().replaceAll(' ', '-');
+    this.imgName = this.slug + '.png';
+    this.link = '/slideshow/' + this.slug;
     this.wikiSource = 'https://en.wikipedia.org/wiki/' + wikipedia;
   }
 
