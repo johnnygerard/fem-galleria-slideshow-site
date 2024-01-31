@@ -1,7 +1,7 @@
 @use 'index' as *;
 
 :host {
-  display: block;;
+  display: block;
   width: 100%;
 }
 
@@ -22,9 +22,10 @@
   }
 }
 
-a {
+.link {
   // Typography
   color: $dark-gray;
+  transition: color 0.2s ease;
   text-decoration: none;
   text-transform: uppercase;
   font-weight: 700;

@@ -1,0 +1,12 @@
+<div class="column-sizer"></div>
+<div class="gutter-sizer"></div>
+<a class="masonry-item" *ngFor="let painting of paintings; index as i" [routerLink]="painting.link">
+  <img [ngSrc]="painting.imgName" ngSrcset="1x, 2x, 3x" [width]="WIDTH"
+      [height]="painting.computeHeight(WIDTH)" [priority]="i < 2" alt>
+  <p class="anchor-text">
+    <span class="title">{{ painting.title | hyphen }}</span>
+    <br>
+    <span class="artist">{{ painting.artist }}</span>
+  </p>
+  <div class="overlay"></div>
+</a>

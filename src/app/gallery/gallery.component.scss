@@ -1,0 +1,68 @@
+@use 'index' as *;
+
+:host {
+  display: block;
+  margin: 0 auto;
+}
+
+.masonry-item {
+  height: auto;
+  margin-bottom: 40px;
+  background-color: #000;
+
+  @include mobile {
+    margin-bottom: 24px;
+  }
+}
+
+// Column and gutter sizers are used by the Masonry library
+.masonry-item,
+.column-sizer {
+  width: 324px;
+}
+
+.gutter-sizer {
+  width: 40px;
+}
+
+.anchor-text {
+  background-image: linear-gradient(#0000, #000000D7);
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 32px;
+  z-index: 1;
+
+  // Typography
+  color: #FFF;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.artist {
+  font-size: 13px;
+  opacity: 0.75;
+}
+
+// START OF OVERLAY **************************************************
+.overlay {
+  // Layout
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  background-color: #FFF;
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.masonry-item:is(:hover, :focus) .overlay {
+  opacity: 0.5;
+}
+// END OF OVERLAY **************************************************

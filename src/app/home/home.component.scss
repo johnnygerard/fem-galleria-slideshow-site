@@ -1,0 +1,14 @@
+@use 'index' as *;
+
+:host {
+  display: block;
+  min-width: 372px;
+}
+
+.gallery-wrapper {
+  padding: 40px 40px 0;
+
+  @include mobile {
+    padding: 24px 24px 0;
+  }
+}
