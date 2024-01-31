@@ -1,7 +1,7 @@
 export class Painting {
-  public imgName: string;
-  public link: string;
-  public wikiSource: string;
+  imgName: string;
+  link: string;
+  wikiSource: string;
 
   constructor(
     public artist: string,
