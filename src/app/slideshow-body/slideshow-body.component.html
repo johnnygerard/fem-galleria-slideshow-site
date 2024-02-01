@@ -6,7 +6,8 @@
       [loaderParams]="{ ar: '475-560' }">
 </ng-template>
 
-<p class="description">
+<div class="description-container">
   <span class="year">{{ painting.year }}</span>
-  <span>{{ painting.description }}</span>
-</p>
+  <p class="description">{{ painting.description }}</p>
+  <a class="wiki-source" [href]="painting.wikiSource">Go to source</a>
+</div>

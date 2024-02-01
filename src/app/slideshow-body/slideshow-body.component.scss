@@ -26,16 +26,10 @@
   object-fit: cover;
 }
 
-.description {
+.description-container {
+  position: relative;
   width: min(100%, 328px);
   margin-top: 172px;
-  position: relative;
-
-  // Typography
-  color: $dark-gray;
-  font-size: 14px;
-  font-weight: 700;
-  line-height: 28px;
 
   @include tablet {
     margin: 140px 0 0 116px;
@@ -49,6 +43,14 @@
     margin: 0;
     width: 350px;
   }
+}
+
+.description {
+  // Typography
+  color: $dark-gray;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 28px;
 }
 
 .year {
@@ -79,6 +81,25 @@
 
   @include desktop {
     top: 35px;
+    left: 0;
+  }
+}
+
+.wiki-source {
+  display: block;
+  margin-top: 40px;
+
+  // Typography
+  color: $dark-gray;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.929px;
+  text-transform: uppercase;
+
+  @include desktop {
+    position: absolute;
+    margin: 0;
+    top: 444px;
     left: 0;
   }
 }
