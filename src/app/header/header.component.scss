@@ -25,7 +25,6 @@
 .link {
   // Typography
   color: $dark-gray;
-  transition: color 0.2s ease;
   text-decoration: none;
   text-transform: uppercase;
   font-weight: 700;
@@ -37,7 +36,5 @@
     letter-spacing: 1.929px;
   }
 
-  &:is(:hover, :focus) {
-    color: $black;
-  }
+  @include active-link;
 }

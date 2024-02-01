@@ -16,6 +16,14 @@
   }
 }
 
+@mixin active-link {
+  transition: color 0.2s ease;
+
+  &:is(:hover, :focus) {
+    color: $black;
+  }
+}
+
 // Colors
 $black: #000;
 $dark-gray: #7D7D7D;
