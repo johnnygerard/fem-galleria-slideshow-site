@@ -1,4 +1,5 @@
 export class Painting {
+  static readonly null = new Painting('', '', [0, 0], '', '', 0);
   previous?: Painting;
   next?: Painting;
   imgName: string;

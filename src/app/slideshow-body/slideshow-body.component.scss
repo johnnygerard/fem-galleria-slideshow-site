@@ -2,6 +2,7 @@
 
 :host {
   display: block;
+  position: relative;
 
   @include mobile {
     display: flex;
@@ -23,4 +24,28 @@
   height: 280px;
   width: min(100%, 328px);
   object-fit: cover;
+}
+
+.description {
+  width: min(100%, 328px);
+  margin-top: 172px;
+
+  // Typography
+  color: $dark-gray;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 28px;
+
+  @include tablet {
+    margin: 140px 0 0 116px;
+    width: 456px;
+  }
+
+  @include desktop {
+    position: absolute;
+    top: 216px;
+    left: 884px;
+    margin: 0;
+    width: 350px;
+  }
 }

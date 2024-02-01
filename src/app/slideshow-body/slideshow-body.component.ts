@@ -2,6 +2,7 @@ import { ChangeDetectionStrategy, Component, HostListener, Input, OnInit } from 
 import { paintings } from '../paintings';
 import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { IMAGEKIT_ENDPOINT } from '../imagekit.config';
+import { Painting } from '../../types/painting.class';
 
 @Component({
   selector: 'app-slideshow-body',
@@ -16,7 +17,7 @@ import { IMAGEKIT_ENDPOINT } from '../imagekit.config';
 })
 export class SlideshowBodyComponent implements OnInit {
   readonly MOBILE_HEIGHT = 280;
-  imgName = '';
+  painting = Painting.null;
   @Input() slug = '';
 
   ngOnInit(): void {
@@ -24,7 +25,7 @@ export class SlideshowBodyComponent implements OnInit {
     if (painting === undefined)
       throw Error(`Painting "${this.slug}" not found`);
 
-    this.imgName = painting.imgName;
+    this.painting = painting;
   }
 
   get isMobile(): boolean {
@@ -36,7 +37,7 @@ export class SlideshowBodyComponent implements OnInit {
   onResize(): void { }
 
   get baseImgSrc(): string {
-    return `${IMAGEKIT_ENDPOINT}/${this.imgName}`;
+    return `${IMAGEKIT_ENDPOINT}/${this.painting.imgName}`;
   }
 
   get imgSrc(): string {
