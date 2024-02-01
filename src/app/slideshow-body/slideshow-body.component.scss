@@ -163,3 +163,25 @@
   color: $dark-gray;
   font-size: 15px;
 }
+
+.artist-img {
+  position: absolute;
+  z-index: 10;
+
+  @include mobile {
+    bottom: 0;
+    transform: translateY(100%);
+    left: 16px;
+  }
+
+  @include tablet {
+    bottom: 0;
+    transform: translateY(100%);
+    right: 54px;
+  }
+
+  @include desktop {
+    top: 496px;
+    right: 222px;
+  }
+}

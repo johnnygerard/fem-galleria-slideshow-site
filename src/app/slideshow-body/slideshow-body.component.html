@@ -9,6 +9,8 @@
   <figcaption class="painting-caption">
     <span class="title">{{ painting.title | hyphen }}</span>
     <span class="artist">{{ painting.artist }}</span>
+    <img class="artist-img" [src]="artistImgSrc" alt [width]="artistImgSize"
+        [height]="artistImgSize">
   </figcaption>
 </figure>
 

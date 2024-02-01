@@ -38,6 +38,15 @@ export class SlideshowBodyComponent implements OnInit {
   @HostListener('window:resize')
   onResize(): void { }
 
+  get artistImgSize(): number {
+    return this.isMobile ? 64 : 128;
+  }
+
+  get artistImgSrc(): string {
+    const size = this.artistImgSize;
+    return this.painting.artistImgName + `?tr=w-${size},h-${size}`;
+  }
+
   get baseImgSrc(): string {
     return `${IMAGEKIT_ENDPOINT}/${this.painting.imgName}`;
   }
