@@ -6,4 +6,7 @@
       [loaderParams]="{ ar: '475-560' }">
 </ng-template>
 
-<p class="description">{{ painting.description }}</p>
+<p class="description">
+  <span class="year">{{ painting.year }}</span>
+  <span>{{ painting.description }}</span>
+</p>

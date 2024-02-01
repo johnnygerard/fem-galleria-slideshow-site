@@ -29,6 +29,7 @@
 .description {
   width: min(100%, 328px);
   margin-top: 172px;
+  position: relative;
 
   // Typography
   color: $dark-gray;
@@ -47,5 +48,37 @@
     left: 884px;
     margin: 0;
     width: 350px;
+  }
+}
+
+.year {
+  position: absolute;
+  transform: translateY(-100%);
+  z-index: -1;
+
+  // Typography
+  color: $snow;
+  font-weight: 700;
+  font-size: 200px;
+  line-height: 0.75;
+
+  @include mobile {
+    top: 26px;
+    right: 0;
+
+    // Typography
+    font-size: 100px;
+    line-height: 1;
+  }
+
+  @include tablet {
+    top: 0;
+    left: -115px;
+    transform: translateY(-50%);
+  }
+
+  @include desktop {
+    top: 35px;
+    left: 0;
   }
 }
