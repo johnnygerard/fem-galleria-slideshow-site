@@ -14,7 +14,7 @@ export const customImageKitLoader = (config: ImageLoaderConfig) => {
 };
 
 type TransformParams = { [param: string]: string };
-const IMAGEKIT_ENDPOINT = 'https://ik.imagekit.io/jgerard/fem-galleria-slideshow-site';
+export const IMAGEKIT_ENDPOINT = 'https://ik.imagekit.io/jgerard/fem-galleria-slideshow-site';
 
 const serialize = (params: TransformParams): string =>
   Object.entries(params)
