@@ -3,8 +3,8 @@
       [height]="MOBILE_HEIGHT" alt fetchpriority="high">
 
   <ng-template #nonMobile>
-    <img [ngSrc]="painting.imgName" ngSrcset="1x, 2x, 3x" alt width="475" height="560" priority
-        [loaderParams]="{ ar: '475-560' }">
+    <img class="painting" [ngSrc]="painting.imgName" ngSrcset="1x, 2x, 3x" alt width="475"
+        height="560" priority [loaderParams]="{ ar: '475-560' }">
   </ng-template>
   <figcaption class="painting-caption">
     <span class="title">{{ painting.title | hyphen }}</span>

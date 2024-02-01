@@ -22,19 +22,22 @@
 
 .painting-container {
   position: relative;
-}
 
-@include mobile {
-  .painting-container {
+  @include mobile {
     width: min(100%, 328px);
   }
+}
 
-  .painting {
+.painting {
+  background-color: $black;
+
+  @include mobile {
     height: 280px;
     width: 100%;
     object-fit: cover;
   }
 }
+
 
 .description-container {
   position: relative;
