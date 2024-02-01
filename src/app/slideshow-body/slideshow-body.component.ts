@@ -3,6 +3,7 @@ import { paintings } from '../paintings';
 import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { IMAGEKIT_ENDPOINT } from '../imagekit.config';
 import { Painting } from '../../types/painting.class';
+import { HyphenPipe } from '../hyphen.pipe';
 
 @Component({
   selector: 'app-slideshow-body',
@@ -10,6 +11,7 @@ import { Painting } from '../../types/painting.class';
   imports: [
     CommonModule,
     NgOptimizedImage,
+    HyphenPipe,
   ],
   templateUrl: './slideshow-body.component.html',
   styleUrl: './slideshow-body.component.scss',

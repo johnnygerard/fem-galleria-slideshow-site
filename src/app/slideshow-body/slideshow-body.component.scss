@@ -20,10 +20,20 @@
   }
 }
 
-.img-mobile {
-  height: 280px;
-  width: min(100%, 328px);
-  object-fit: cover;
+.painting-container {
+  position: relative;
+}
+
+@include mobile {
+  .painting-container {
+    width: min(100%, 328px);
+  }
+
+  .painting {
+    height: 280px;
+    width: 100%;
+    object-fit: cover;
+  }
 }
 
 .description-container {
@@ -39,7 +49,7 @@
   @include desktop {
     position: absolute;
     top: 216px;
-    left: 884px;
+    left: 908px;
     margin: 0;
     width: 350px;
   }
@@ -104,4 +114,49 @@
   }
 
   @include active-link;
+}
+
+.painting-caption {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 0 0 68px 64px;
+  width: 444px;
+  background-color: $white;
+
+  @include mobile {
+    gap: 8px;
+    padding: 24px;
+    width: min(280px, 100%);
+    bottom: -54px;
+    left: 0;
+  }
+
+  @include tablet {
+    top: 0;
+    left: 244px;
+  }
+
+  @include desktop {
+    top: 0;
+    left: 410px;
+  }
+}
+
+.title {
+  color: $black;
+  font-weight: 700;
+  font-size: 56px;
+  line-height: 1.14;
+
+  @include mobile {
+    font-size: 24px;
+    line-height: 1.2;
+  }
+}
+
+.artist {
+  color: $dark-gray;
+  font-size: 15px;
 }
