@@ -17,18 +17,9 @@ import { HyphenPipe } from '../hyphen.pipe';
   styleUrl: './slideshow-body.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class SlideshowBodyComponent implements OnInit {
+export class SlideshowBodyComponent {
   readonly MOBILE_HEIGHT = 280;
-  painting = Painting.null;
-  @Input() slug = '';
-
-  ngOnInit(): void {
-    const painting = paintings.get(this.slug);
-    if (painting === undefined)
-      throw Error(`Painting "${this.slug}" not found`);
-
-    this.painting = painting;
-  }
+  @Input({ required: true }) painting!: Painting;
 
   get isMobile(): boolean {
     return innerWidth < 768;
