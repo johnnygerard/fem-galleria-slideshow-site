@@ -2,7 +2,6 @@ import { IMAGEKIT_ENDPOINT } from "../app/imagekit.config";
 
 export class Painting {
   readonly IMG_EXT = '.png';
-  static readonly null = new Painting('', '', [0, 0], '', '', 0);
   previous?: Painting;
   next?: Painting;
   artistImgName: string;
@@ -18,6 +17,7 @@ export class Painting {
     public title: string,
     public wikipedia: string,
     public year: number,
+    public index = 0,
   ) {
     this.artistImgName = `${IMAGEKIT_ENDPOINT}/artist/${this.#toSlug(artist)}${this.IMG_EXT}`;
     this.slug = this.#toSlug(title);
