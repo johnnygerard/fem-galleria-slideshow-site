@@ -1,0 +1,9 @@
+<progress class="progress" [value]="progress"></progress>
+<div class="painting-info">
+  <span class="title">{{ painting.title }}</span>
+  <span class="artist">{{ painting.artist }}</span>
+</div>
+<div class="media-buttons">
+  <app-media-button left [slug]="painting.previous?.slug" />
+  <app-media-button [slug]="painting.next?.slug" />
+</div>
