@@ -8,7 +8,16 @@
   transform: rotate(.5turn);
 }
 
-.link:is(:hover, :focus) {
+.link {
+  outline-offset: 12px;
+  border-radius: 50%;
+
+  @include mobile {
+    outline-offset: 8px;
+  }
+}
+
+.link:hover svg {
   opacity: .5;
 }
 
