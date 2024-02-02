@@ -1,0 +1,11 @@
+:host {
+  display: block;
+}
+
+.link:is(:hover, :focus) {
+  opacity: .5;
+}
+
+.disabled {
+  opacity: .15;
+}

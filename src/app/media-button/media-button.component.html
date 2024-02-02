@@ -1,0 +1,13 @@
+<a class="link" *ngIf="slug; else svg" [routerLink]="['..', slug]">
+  <ng-container *ngIf="true; then svg" />
+</a>
+
+<ng-template #svg>
+  <svg width="26" height="24" viewBox="0 0 26 24" fill="none" [class.disabled]="!slug"
+      [attr.transform]="left ? 'rotate(180)' : 'none'">
+    <g stroke="black">
+      <path d="M1.52783 1.8435L22.0663 12.1128L1.52783 22.382V1.8435Z" stroke-width="2" />
+      <rect x="24.579" y="0.371478" width="0.742956" height="23.0316" stroke-width="0.742956" />
+    </g>
+  </svg>
+</ng-template>
