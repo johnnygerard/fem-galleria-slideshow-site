@@ -1,7 +1,8 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, booleanAttribute } from '@angular/core';
 import { LogoSvgComponent } from '../svg/logo-svg.component';
 import { RouterModule } from '@angular/router';
 import { paintings } from '../paintings';
+import { Painting } from '../../types/painting.class';
 
 @Component({
   selector: 'app-header',
@@ -15,17 +16,17 @@ import { paintings } from '../paintings';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HeaderComponent {
-  @Input() slideshow = false;
+  @Input({ transform: booleanAttribute }) slideshow = false;
 
   get label() {
     return `${this.slideshow ? 'Stop' : 'Start'} slideshow`;
   }
 
   get route(): string {
-    return this.slideshow ? '/' : `/slideshow/${this.firstTitleSlug}`;
+    return this.slideshow ? '/' : this.#firstPainting.link;
   }
 
-  get firstTitleSlug() {
-    return paintings[0].title.toLowerCase().replaceAll(' ', '-');
+  get #firstPainting(): Painting {
+    return paintings.values().next().value;
   }
 }

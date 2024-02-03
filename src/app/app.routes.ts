@@ -1,12 +1,6 @@
-import { Component } from '@angular/core';
 import { Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
-
-@Component({
-  template: '<p>dummy works!</p>',
-  standalone: true,
-})
-class DummyComponent { }
+import { SlideshowComponent } from './slideshow/slideshow.component';
 
 export const routes: Routes = [
   {
@@ -15,8 +9,8 @@ export const routes: Routes = [
     component: HomeComponent
   },
   {
-    path: 'slideshow/:title',
-    component: DummyComponent // TODO: SlideshowComponent
+    path: 'slideshow/:slug',
+    component: SlideshowComponent
   },
   {
     path: '**',

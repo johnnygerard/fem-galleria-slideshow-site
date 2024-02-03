@@ -1,0 +1,40 @@
+@use 'index' as *;
+
+:host {
+  display: block;
+}
+
+.left {
+  transform: rotate(.5turn);
+}
+
+.link {
+  outline-offset: 12px;
+  border-radius: 50%;
+
+  @include mobile {
+    outline-offset: 8px;
+  }
+}
+
+.link:hover svg {
+  opacity: .5;
+}
+
+.disabled {
+  opacity: .15;
+  cursor: not-allowed;
+}
+
+svg {
+  $width: 26px;
+  $height: 24px;
+
+  width: $width;
+  height: $height;
+
+  @include mobile {
+    width: calc($width * 2 / 3);
+    height: calc($height * 2 / 3);
+  }
+}

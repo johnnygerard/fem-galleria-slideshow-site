@@ -1,0 +1,21 @@
+<figure class="painting-container">
+  <img *ngIf="isMobile; else nonMobile" class="painting" [src]="imgSrc" [srcset]="imgSrcset"
+      [height]="MOBILE_HEIGHT" alt fetchpriority="high">
+
+  <ng-template #nonMobile>
+    <img class="painting" [ngSrc]="painting.imgName" ngSrcset="1x, 2x, 3x" alt width="475"
+        height="560" priority [loaderParams]="{ ar: '475-560' }">
+  </ng-template>
+  <figcaption class="painting-caption">
+    <span class="title">{{ painting.title | hyphen }}</span>
+    <span class="artist">{{ painting.artist }}</span>
+    <img class="artist-img" [src]="artistImgSrc" alt [width]="artistImgSize"
+        [height]="artistImgSize">
+  </figcaption>
+</figure>
+
+<div class="description-container">
+  <span class="year">{{ painting.year }}</span>
+  <p class="description">{{ painting.description }}</p>
+  <a class="wiki-source" [href]="painting.wikiSource">Go to source</a>
+</div>

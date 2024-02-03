@@ -1,0 +1,187 @@
+@use 'index' as *;
+
+:host {
+  display: block;
+  position: relative;
+
+  @include mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px 24px 52px;
+  }
+
+  @include tablet {
+    padding: 40px 40px 52px;
+  }
+
+  @include desktop {
+    padding: 100px 40px 128px;
+  }
+}
+
+.painting-container {
+  position: relative;
+
+  @include mobile {
+    width: min(100%, 328px);
+  }
+}
+
+.painting {
+  background-color: $black;
+
+  @include mobile {
+    height: 280px;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+
+.description-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 40px;
+  width: min(100%, 328px);
+  margin-top: 172px;
+
+  @include tablet {
+    margin: 140px 0 0 116px;
+    width: 456px;
+  }
+
+  @include desktop {
+    position: absolute;
+    top: 216px;
+    left: 908px;
+    margin: 0;
+    width: 350px;
+  }
+}
+
+.description {
+  // Typography
+  color: $dark-gray;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 28px;
+}
+
+.year {
+  position: absolute;
+  transform: translateY(-100%);
+  z-index: -1;
+
+  // Typography
+  color: $snow;
+  font-weight: 700;
+  font-size: 200px;
+  line-height: 0.75;
+
+  @include mobile {
+    top: 26px;
+    right: 0;
+
+    // Typography
+    font-size: 100px;
+    line-height: 1;
+  }
+
+  @include tablet {
+    top: 0;
+    left: -115px;
+    transform: translateY(-50%);
+  }
+
+  @include desktop {
+    top: 35px;
+    left: 0;
+  }
+}
+
+.wiki-source {
+  // Typography
+  color: $dark-gray;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.929px;
+  text-transform: uppercase;
+
+  @include desktop {
+    position: absolute;
+    top: 444px;
+    left: 0;
+  }
+
+  @include active-link;
+}
+
+.painting-caption {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 0 0 68px 64px;
+  width: 444px;
+  background-color: $white;
+
+  @include mobile {
+    gap: 8px;
+    padding: 24px;
+    width: min(280px, 100%);
+    bottom: -54px;
+    left: 0;
+  }
+
+  @include tablet {
+    top: 0;
+    left: 244px;
+  }
+
+  @include desktop {
+    top: 0;
+    left: 410px;
+  }
+}
+
+.title {
+  color: $black;
+  font-weight: 700;
+  font-size: 56px;
+  line-height: 1.14;
+
+  @include mobile {
+    font-size: 24px;
+    line-height: 1.2;
+  }
+}
+
+.artist {
+  color: $dark-gray;
+  font-size: 15px;
+}
+
+.artist-img {
+  position: absolute;
+  z-index: 10;
+
+  @include mobile {
+    bottom: 0;
+    transform: translateY(100%);
+    left: 16px;
+  }
+
+  @include tablet {
+    bottom: 0;
+    transform: translateY(100%);
+    right: 54px;
+  }
+
+  @include desktop {
+    top: 496px;
+    right: 222px;
+  }
+}
