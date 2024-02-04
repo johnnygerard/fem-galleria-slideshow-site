@@ -1,0 +1,86 @@
+@use 'index' as *;
+@use 'sass:color';
+
+$close-button-height: 14px;
+
+:host {
+  display: block;
+}
+
+dialog {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  height: 100%;
+
+  &::backdrop {
+    opacity: .85;
+    background-color: $black;
+  }
+}
+
+form {
+  $gap: 40px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  height: 100%;
+  gap: $gap;
+
+  .painting {
+    color: $white; // For the alt text
+    max-height: calc(100% - $close-button-height - $gap);
+  }
+
+  @include mobile {
+    $gap: 32px;
+
+    gap: $gap;
+
+    .painting {
+      max-height: calc(100% - $close-button-height - $gap);
+    }
+  }
+}
+
+.open-button {
+  display: flex;
+  align-items: center;
+  padding: 14px 16px;
+  gap: 14px;
+
+  // Typography
+  color: $white;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2.143px;
+  text-transform: uppercase;
+
+  background-color: color.change($color: $black, $alpha: .75);
+
+  &:hover {
+    background-color: color.change($color: $white, $alpha: .25);
+  }
+
+  &:focus-visible {
+    outline-offset: -4px;
+  }
+}
+
+.close-button {
+  // Typography
+  color: $white;
+  font-size: $close-button-height;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+
+  transition: opacity .2s ease;
+
+  &:hover {
+    opacity: 0.25;
+  }
+}

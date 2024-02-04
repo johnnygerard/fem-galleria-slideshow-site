@@ -1,0 +1,24 @@
+<button type="button" class="open-button" (click)="dialog.showModal()">
+  <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+    <path
+        d="M7.71431 0L9.21432 1.5L6.85718 3.85714L8.14288 5.14285L10.5 2.78571L12 4.28571V0H7.71431Z"
+        fill="white" />
+    <path
+        d="M3.85714 6.85742L1.5 9.21456L0 7.71456V12.0003H4.28571L2.78571 10.5003L5.14285 8.14313L3.85714 6.85742Z"
+        fill="white" />
+    <path
+        d="M8.14288 6.85742L6.85718 8.14313L9.21432 10.5003L7.71431 12.0003H12V7.71456L10.5 9.21456L8.14288 6.85742Z"
+        fill="white" />
+    <path
+        d="M4.28571 0H0V4.28571L1.5 2.78571L3.85714 5.14285L5.14285 3.85714L2.78571 1.5L4.28571 0Z"
+        fill="white" />
+  </svg>
+  <span>View Image</span>
+</button>
+
+<dialog #dialog>
+  <form method="dialog">
+    <button class="close-button">Close</button>
+    <img class="painting" [src]="getSrc()" [srcset]="srcset" [alt]="alt">
+  </form>
+</dialog>
