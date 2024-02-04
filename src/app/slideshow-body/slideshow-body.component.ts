@@ -4,6 +4,7 @@ import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { IMAGEKIT_ENDPOINT } from '../imagekit.config';
 import { Painting } from '../../types/painting.class';
 import { HyphenPipe } from '../hyphen.pipe';
+import { LightboxComponent } from '../lightbox/lightbox.component';
 
 @Component({
   selector: 'app-slideshow-body',
@@ -12,6 +13,7 @@ import { HyphenPipe } from '../hyphen.pipe';
     CommonModule,
     NgOptimizedImage,
     HyphenPipe,
+    LightboxComponent,
   ],
   templateUrl: './slideshow-body.component.html',
   styleUrl: './slideshow-body.component.scss',

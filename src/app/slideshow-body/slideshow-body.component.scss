@@ -185,3 +185,17 @@
     right: 222px;
   }
 }
+
+.lightbox {
+  $margin: 16px;
+
+  position: absolute;
+  bottom: $margin;
+  left: $margin;
+
+  @include mobile {
+    bottom: unset;
+    top: $margin;
+    left: $margin;
+  }
+}

@@ -84,3 +84,7 @@ hr {
   height: 1px;
   border: none;
 }
+
+dialog {
+  margin: auto;
+}
