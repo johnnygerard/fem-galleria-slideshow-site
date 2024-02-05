@@ -60,6 +60,10 @@ const slideshowAnimation = animation([
 export class AppComponent {
   constructor(private _nestedOutlets: ChildrenOutletContexts) { }
 
+  scrollToTop(): void {
+    scrollTo(0, 0);
+  }
+
   get activatedRoute(): ActivatedRoute | null | undefined {
     return (this._nestedOutlets.getContext('primary'))?.route;
   }
