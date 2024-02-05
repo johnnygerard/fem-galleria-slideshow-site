@@ -1,7 +1,7 @@
 # Frontend Mentor | Galleria slideshow site
 This is my solution to the [Galleria slideshow site challenge](https://www.frontendmentor.io/challenges/galleria-slideshow-site-tEA4pwsa6) from [Frontend Mentor](https://www.frontendmentor.io/).
 
-[![project status](https://img.shields.io/badge/status-work%20in%20progress-red?style=for-the-badge)](https://fem-galleria-slideshow-site-jgerard.vercel.app)
+[![project status](https://img.shields.io/badge/status-solution%20published-success?style=for-the-badge)](https://www.frontendmentor.io/solutions/galleria-slideshow-site-zUwKdEn5YJ)
 
  ## Tech Stack
 - Angular 17
@@ -26,7 +26,7 @@ This is my solution to the [Galleria slideshow site challenge](https://www.front
 
 ## Links
  - [Website](https://fem-galleria-slideshow-site-jgerard.vercel.app) hosted with [Vercel](https://vercel.com/)
- <!-- - [Solution]() -->
+ - [Solution](https://www.frontendmentor.io/solutions/galleria-slideshow-site-zUwKdEn5YJ)
 
 ## Screenshots
 ### Mobile Home
