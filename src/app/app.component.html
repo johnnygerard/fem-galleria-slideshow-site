@@ -1,3 +1,4 @@
-<div [@routeAnimations]="routeAnimationState" [@slideshow]="(data$ | async)?.['paintingIndex']">
+<div [@routeAnimations]="routeAnimationState" [@slideshow]="(data$ | async)?.['paintingIndex']"
+    (@routeAnimations.done)="scrollToTop()">
   <router-outlet />
 </div>
