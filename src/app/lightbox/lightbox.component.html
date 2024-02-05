@@ -1,4 +1,4 @@
-<button type="button" class="open-button" (click)="dialog.showModal()">
+<button type="button" class="open-button" (click)="showModal(dialog)">
   <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
     <path
         d="M7.71431 0L9.21432 1.5L6.85718 3.85714L8.14288 5.14285L10.5 2.78571L12 4.28571V0H7.71431Z"
@@ -19,6 +19,6 @@
 <dialog #dialog>
   <form method="dialog">
     <button class="close-button">Close</button>
-    <img class="painting" [src]="getSrc()" [srcset]="srcset" [alt]="alt">
+    <img *ngIf="dialogIsOpen" class="painting" [src]="getSrc()" [srcset]="srcset" [alt]="alt">
   </form>
 </dialog>

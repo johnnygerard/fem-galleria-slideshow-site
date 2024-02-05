@@ -1,4 +1,4 @@
-import { NgOptimizedImage } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { Painting } from '../../types/painting.class';
 import { IMAGEKIT_ENDPOINT } from '../imagekit.config';
@@ -7,6 +7,7 @@ import { IMAGEKIT_ENDPOINT } from '../imagekit.config';
   selector: 'app-lightbox',
   standalone: true,
   imports: [
+    CommonModule,
     NgOptimizedImage,
   ],
   templateUrl: './lightbox.component.html',
@@ -15,6 +16,12 @@ import { IMAGEKIT_ENDPOINT } from '../imagekit.config';
 })
 export class LightboxComponent {
   @Input() painting!: Painting;
+  dialogIsOpen = false;
+
+  showModal(dialog: HTMLDialogElement) {
+    this.dialogIsOpen = true;
+    dialog.showModal();
+  }
 
   getSrc(dpr: number = 1): string {
     // For simplicity, I use the full viewport for the image max resolution.
