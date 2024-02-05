@@ -60,6 +60,7 @@ form {
   text-transform: uppercase;
 
   background-color: color.change($color: $black, $alpha: .75);
+  transition: background-color .4s ease;
 
   &:hover {
     background-color: color.change($color: $white, $alpha: .25);
