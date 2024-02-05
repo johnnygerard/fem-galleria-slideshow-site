@@ -3,6 +3,7 @@ import { provideRouter, withComponentInputBinding } from '@angular/router';
 import { routes } from './app.routes';
 import { IMAGE_LOADER } from '@angular/common';
 import { customImageKitLoader } from './imagekit.config';
+import { provideAnimations } from '@angular/platform-browser/animations';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -11,5 +12,6 @@ export const appConfig: ApplicationConfig = {
       provide: IMAGE_LOADER,
       useValue: customImageKitLoader
     },
+    provideAnimations(),
   ]
 };

@@ -6,10 +6,12 @@ export const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
+    data: { animationState: 'homePage' },
     component: HomeComponent
   },
   {
     path: 'slideshow/:slug',
+    data: { animationState: 'slideshowPage' },
     component: SlideshowComponent
   },
   {
