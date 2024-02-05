@@ -1,4 +1,10 @@
 <figure class="painting-container">
+  <figcaption class="painting-caption">
+    <span class="title">{{ painting.title | hyphen }}</span>
+    <span class="artist">{{ painting.artist }}</span>
+    <img class="artist-img" [src]="artistImgSrc" alt [width]="artistImgSize"
+        [height]="artistImgSize">
+  </figcaption>
   <img *ngIf="isMobile; else nonMobile" class="painting" [src]="imgSrc" [srcset]="imgSrcset"
       [height]="MOBILE_HEIGHT" alt fetchpriority="high">
 
@@ -6,12 +12,6 @@
     <img class="painting" [ngSrc]="painting.imgName" ngSrcset="1x, 2x, 3x" alt width="475"
         height="560" priority [loaderParams]="{ ar: '475-560' }">
   </ng-template>
-  <figcaption class="painting-caption">
-    <span class="title">{{ painting.title | hyphen }}</span>
-    <span class="artist">{{ painting.artist }}</span>
-    <img class="artist-img" [src]="artistImgSrc" alt [width]="artistImgSize"
-        [height]="artistImgSize">
-  </figcaption>
   <app-lightbox class="lightbox" [painting]="painting" />
 </figure>
 

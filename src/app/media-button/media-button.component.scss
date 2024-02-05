@@ -37,4 +37,6 @@ svg {
     width: calc($width * 2 / 3);
     height: calc($height * 2 / 3);
   }
+
+  transition: opacity .2s ease;
 }

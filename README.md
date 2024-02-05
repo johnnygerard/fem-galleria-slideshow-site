@@ -9,6 +9,10 @@ This is my solution to the [Galleria slideshow site challenge](https://www.front
 
 ## Main Features
 - Standalone components
+- Title resolver (from URL)
+- Images served from [ImageKit](https://imagekit.io/) CDN
+- [Masonry](https://masonry.desandro.com/) layout (JavaScript library)
+- Angular animations (route transitions)
 - Self-hosted fonts (downloaded from [Google Fonts](https://fonts.google.com))
 - Bash automation (see [PR #1](../../pull/1))
 - [GitHub Actions](../../tree/main/.github/workflows):
@@ -22,16 +26,21 @@ This is my solution to the [Galleria slideshow site challenge](https://www.front
 
 ## Links
  - [Website](https://fem-galleria-slideshow-site-jgerard.vercel.app) hosted with [Vercel](https://vercel.com/)
- - Images served from [ImageKit](https://imagekit.io/) CDN
  <!-- - [Solution]() -->
 
-<!-- ## Screenshots
-### Desktop
-![desktop screenshot](screenshots/desktop.webp)
-### Tablet
-![tablet screenshot](screenshots/tablet.webp)
-### Mobile
-![mobile screenshot](screenshots/mobile.webp) -->
+## Screenshots
+### Mobile Home
+![mobile home screenshot](screenshots/mobile-home.avif)
+### Mobile Slideshow
+![mobile slideshow screenshot](screenshots/mobile-slideshow.avif)
+### Tablet Home
+![tablet home screenshot](screenshots/tablet-home.avif)
+### Tablet Slideshow
+![tablet slideshow screenshot](screenshots/tablet-slideshow.avif)
+### Desktop Home
+![desktop home screenshot](screenshots/desktop-home.avif)
+### Desktop Slideshow
+![desktop slideshow screenshot](screenshots/desktop-slideshow.avif)
 
 ## About Frontend Mentor
 [Frontend Mentor](https://www.frontendmentor.io/) challenges help you improve your coding skills by building realistic projects.
