@@ -28,11 +28,6 @@ export class SlideshowComponent {
 
     if (painting) this.painting = painting;
     else throw Error(`Painting "${value}" not found`);
-
-    scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
   }
 
   constructor(
