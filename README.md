@@ -25,13 +25,19 @@ This is my solution to the [Galleria slideshow site challenge](https://www.front
  - Images served from [ImageKit](https://imagekit.io/) CDN
  <!-- - [Solution]() -->
 
-<!-- ## Screenshots
-### Desktop
-![desktop screenshot](screenshots/desktop.webp)
-### Tablet
-![tablet screenshot](screenshots/tablet.webp)
-### Mobile
-![mobile screenshot](screenshots/mobile.webp) -->
+## Screenshots
+### Mobile Home
+![mobile home screenshot](screenshots/mobile-home.avif)
+### Mobile Slideshow
+![mobile slideshow screenshot](screenshots/mobile-slideshow.avif)
+### Tablet Home
+![tablet home screenshot](screenshots/tablet-home.avif)
+### Tablet Slideshow
+![tablet slideshow screenshot](screenshots/tablet-slideshow.avif)
+### Desktop Home
+![desktop home screenshot](screenshots/desktop-home.avif)
+### Desktop Slideshow
+![desktop slideshow screenshot](screenshots/desktop-slideshow.avif)
 
 ## About Frontend Mentor
 [Frontend Mentor](https://www.frontendmentor.io/) challenges help you improve your coding skills by building realistic projects.
