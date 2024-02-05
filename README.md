@@ -9,6 +9,10 @@ This is my solution to the [Galleria slideshow site challenge](https://www.front
 
 ## Main Features
 - Standalone components
+- Title resolver (from URL)
+- Images served from [ImageKit](https://imagekit.io/) CDN
+- [Masonry](https://masonry.desandro.com/) layout (JavaScript library)
+- Angular animations (route transitions)
 - Self-hosted fonts (downloaded from [Google Fonts](https://fonts.google.com))
 - Bash automation (see [PR #1](../../pull/1))
 - [GitHub Actions](../../tree/main/.github/workflows):
@@ -22,7 +26,6 @@ This is my solution to the [Galleria slideshow site challenge](https://www.front
 
 ## Links
  - [Website](https://fem-galleria-slideshow-site-jgerard.vercel.app) hosted with [Vercel](https://vercel.com/)
- - Images served from [ImageKit](https://imagekit.io/) CDN
  <!-- - [Solution]() -->
 
 ## Screenshots
