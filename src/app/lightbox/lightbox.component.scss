@@ -32,6 +32,7 @@ form {
   .painting {
     color: $white; // For the alt text
     max-height: calc(100% - $close-button-height - $gap);
+    animation: fadeIn 1s ease;
   }
 
   @include mobile {
@@ -82,5 +83,15 @@ form {
 
   &:hover {
     opacity: 0.25;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
   }
 }
