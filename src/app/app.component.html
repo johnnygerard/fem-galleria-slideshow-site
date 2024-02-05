@@ -1,1 +1,3 @@
-<router-outlet />
+<div [@routeAnimations]="routeAnimationState" [@slideshow]="(data$ | async)?.['paintingIndex']">
+  <router-outlet />
+</div>
