@@ -19,7 +19,7 @@
     cursor: not-allowed;
   }
 
-  &:not(.disabled)>svg:hover {
+  &:hover:not(.disabled) {
     opacity: .5;
   }
 }
