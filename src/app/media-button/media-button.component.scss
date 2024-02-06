@@ -4,10 +4,6 @@
   display: block;
 }
 
-.left {
-  transform: rotate(.5turn);
-}
-
 .link {
   outline-offset: 12px;
   border-radius: 50%;
@@ -15,15 +11,17 @@
   @include mobile {
     outline-offset: 8px;
   }
-}
 
-.link:hover svg {
-  opacity: .5;
-}
+  transition: opacity .2s ease;
 
-.disabled {
-  opacity: .15;
-  cursor: not-allowed;
+  &.disabled {
+    opacity: .15;
+    cursor: not-allowed;
+  }
+
+  &:not(.disabled)>svg:hover {
+    opacity: .5;
+  }
 }
 
 svg {
@@ -38,5 +36,7 @@ svg {
     height: calc($height * 2 / 3);
   }
 
-  transition: opacity .2s ease;
+  &.left {
+    transform: rotate(.5turn);
+  }
 }

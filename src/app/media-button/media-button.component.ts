@@ -16,4 +16,8 @@ import { RouterModule } from '@angular/router';
 export class MediaButtonComponent {
   @Input({ transform: booleanAttribute }) left = false;
   @Input() slug?: string;
+
+  get disabled(): boolean {
+    return !this.slug;
+  }
 }
