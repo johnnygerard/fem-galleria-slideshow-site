@@ -1,6 +1,9 @@
 # Frontend Mentor | Galleria slideshow site
 This is my solution to the [Galleria slideshow site challenge](https://www.frontendmentor.io/challenges/galleria-slideshow-site-tEA4pwsa6) from [Frontend Mentor](https://www.frontendmentor.io/).
 
+The gallery page significantly deviates from the original design, mainly through the use of a single column size.
+This offers a robust and scalable solution because paintings can be reordered, added, or removed while maintaining their aspect ratio and the masonry layout.
+
 [![project status](https://img.shields.io/badge/status-solution%20published-success?style=for-the-badge)](https://www.frontendmentor.io/solutions/galleria-slideshow-site-zUwKdEn5YJ)
 
  ## Tech Stack
@@ -11,6 +14,7 @@ This is my solution to the [Galleria slideshow site challenge](https://www.front
 - Standalone components
 - Title resolver (from URL)
 - Images served from [ImageKit](https://imagekit.io/) CDN
+- Image lazy loading with [NgOptimizedImage](https://angular.dev/guide/image-optimization)
 - [Masonry](https://masonry.desandro.com/) layout (JavaScript library)
 - Angular animations (route transitions)
 - Self-hosted fonts (downloaded from [Google Fonts](https://fonts.google.com))
