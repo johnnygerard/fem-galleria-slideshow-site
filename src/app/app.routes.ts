@@ -10,14 +10,14 @@ export const routes: Routes = [
     pathMatch: 'full',
     data: { animationState: 'homePage' },
     title: 'galleria. | Home',
-    component: HomeComponent
+    component: HomeComponent,
   },
   {
     path: 'slideshow/:slug',
     data: { animationState: 'slideshowPage' },
     resolve: { paintingIndex: paintingResolver },
     title: slideshowTitleResolver,
-    component: SlideshowComponent
+    component: SlideshowComponent,
   },
   {
     path: '**',
