@@ -8,15 +8,18 @@ import { AnimationRouteReuseStrategy } from './animation-route-reuse-strategy';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideRouter(routes, withComponentInputBinding()),
+    provideRouter(
+      routes,
+      withComponentInputBinding(),
+    ),
     provideAnimations(),
     {
       provide: IMAGE_LOADER,
-      useValue: customImageKitLoader
+      useValue: customImageKitLoader,
     },
     {
       provide: RouteReuseStrategy,
-      useClass: AnimationRouteReuseStrategy
+      useClass: AnimationRouteReuseStrategy,
     },
   ]
 };
