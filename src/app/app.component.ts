@@ -35,17 +35,12 @@ const slideshowAnimation = animation([
   styleUrl: './app.component.scss',
   animations: [
     trigger('routeAnimations', [
-      transition('homePage => slideshowPage', [
-        query(':leave', [
-          animate('.5s ease', style({ opacity: 0 }))
-        ])
-      ]),
-      transition('slideshowPage => homePage', [
+      transition('homePage <=> slideshowPage', [
         query(':enter', [
           style({ opacity: 0 }),
-          animate('1s ease', style({ opacity: 1 }))
-        ])
-      ])
+          animate('1s ease', style({ opacity: 1 })),
+        ]),
+      ]),
     ]),
     trigger('slideshow', [
       transition(':increment', [
